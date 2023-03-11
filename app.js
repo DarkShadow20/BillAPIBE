@@ -14,8 +14,12 @@ const errorHandler=require("./middlewares/errorHandler");
 const routeHandler=require("./middlewares/routeHandler");
 
 const userRouter=require("./routes/users.routes")
+const customerRouter=require("./routes/customer.routes");
+const invoiceRouter=require("./routes/invoice.routes");
 
 app.use("/users",userRouter)
+app.use("/customers",customerRouter);
+app.use("/submit",invoiceRouter);
 
 app.get("/", (req, res) => {
     res.send("API for BILLAPI");
