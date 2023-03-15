@@ -48,6 +48,11 @@ const findUser=async(req,res)=>{
             email: userInfo.email,
             token,
           });
+    }else{
+      res.status(401).json({
+        success:false,
+        message: "Please check credentials"
+      })
     }
   }catch(e){
     res.status(500).json({
